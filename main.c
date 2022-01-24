@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 46 from document attached
+	Exercise 52 from document attached
 */
 
 /////////////////////////////////////////////
@@ -10,7 +10,6 @@
 /////////////////////////////////////////////
 
 #include <stdio.h>
-#include <stdint.h>
 
 /////////////////////////////////////////////
 /// Global variables
@@ -36,20 +35,14 @@
 
 void main (void)
 {
-	uint16_t x,k;
-	uint8_t y,z;
-
-	printf("input a inter value with three cases: ");
-	scanf("%d", &x);
-
-	z = x % 100;
-	z = x % 10;
-
-	y = x % 100;
-	y = y - z;
-
-	k = x-(y+z);
-
-	x = (k/100) + (z*100) + y;
-	printf("%d", x);
+	float x[3];
+	printf("input a first bettor paid amount: \n");
+	scanf("%f",x);
+	printf("input a second bettor paid amount: \n");
+	scanf("%f",x+1);
+	printf("input a third bettor paid amount: \n");
+	scanf("%f",x+2);
+	printf("prize value for the first paid: %.2f%%\n",(100*x[0]/(x[0] + x[1] + x[2])));
+	printf("prize value for the second paid: %.2f%%\n",(100*x[1]/(x[0] + x[1] + x[2])));
+	printf("prize value for the third paid: %.2f%%\n",(100*x[2]/(x[0] + x[1] + x[2])));
 }
