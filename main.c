@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 25 from document attached
+	Exercise 37 from document attached
 */
 
 /////////////////////////////////////////////
@@ -10,7 +10,10 @@
 /////////////////////////////////////////////
 
 #include <stdio.h>
-#include <math.h>
+#define OneToTwo ( (float) 1.00 )
+#define ThreeToFour ( (float) 1.40 )
+#define MoreFive ( (float) 2.00 )
+#define SixtyMinutes 60
 
 /////////////////////////////////////////////
 /// Global variables
@@ -36,40 +39,46 @@
 
 void main (void)
 {
-	float a,b,c,delta,root1,root2;
+	float Multiplier,Time_pay;
+	int H_entry, M_entry, H_depart, M_depart;
+	int Time_entry, Time_depart, total_time;
 	
-	printf("Input the values of second degree equation: Ax^2 + Bx + C\nValue A: ");
-	scanf("%f", &a);
-	printf("\nValue B: ");
-	scanf("%f", &b);
-	printf("\nValue C: ");
-	scanf("%f", &c);
+	printf("\nInput the entry time\n");
+	printf("\nHours: ");
+	scanf("%d",&H_entry);
+	printf("\nMinutes: ");
+	scanf("%d",&M_entry);
 
-	if(0 != a)
+	printf("\nInput the departure time: \n");
+	printf("\nHours: ");
+	scanf("%d",&H_depart);
+	printf("\nMinutes: ");
+	scanf("%d",&M_depart);
+
+	Time_entry = M_entry + ( SixtyMinutes * H_entry );
+	Time_depart = M_depart + ( SixtyMinutes * H_depart );
+	total_time = Time_depart - Time_entry;
+
+	if( total_time >= SixtyMinutes * 5 )
 	{
-		delta = ( pow(b,2) - (4*a*c) );
-
-		if(delta < 0)
-		{
-			printf("\nthere is no real root");
-		}
-		else if(delta > 0)
-		{
-			root1 = ( (-1)*b + sqrt(delta) )/(2*a);
-			root2 = ( (-1)*b - sqrt(delta) )/(2*a);
-
-			printf("\nthere are two real roots\n");
-			printf("First root: %.2f\n", root1);
-			printf("Second root: %.2f\n", root2);	
-		}
-		else
-		{
-			root1 = (-1)*b/(2*a);
-			printf("\nthere is a real root: %.2f", root1);
-		}
+		Multiplier = MoreFive;
+	}
+	else if( total_time >= SixtyMinutes * 3 )
+	{
+		Multiplier = ThreeToFour;
 	}
 	else
 	{
-		printf("\nThe equation is not a degree equation, because the A value is zero\n");
+		Multiplier = OneToTwo;
 	}
+
+	if( (total_time % SixtyMinutes) )
+	{
+		Time_pay = ( (float) (H_depart - H_entry) + 1.0 ) * Multiplier;
+	}
+	else
+	{
+		Time_pay = (float) (H_depart - H_entry) * Multiplier;
+	}
+	printf("The amount to be paied is: %.2f", Time_pay);
 }
