@@ -2,43 +2,32 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
+	Exercise 1 from document attached
 */
 
 /////////////////////////////////////////////
 /// Compilation directives
 /////////////////////////////////////////////
 
-#include <example_lib.h>
-#define example_define "example_define"
+#include <stdlib.h>
 
 /////////////////////////////////////////////
 /// Global variables
 /////////////////////////////////////////////
 
-int example_global_variable;
+	//None
 
 /////////////////////////////////////////////
 /// Structs and Enums
 /////////////////////////////////////////////
 
-typedef struct
-{
-	int example_int_struct;
-	char example_char_struct;
-}example_struct;
-
-
-typedef enum
-{
-	example_enum1,
-	example_enum2
-}example_enum;
+	//None
 
 /////////////////////////////////////////////
 /// Functions
 /////////////////////////////////////////////
 
-int Function_example(void);
+	//None
 
 /////////////////////////////////////////////
 /// Init Code
@@ -46,5 +35,8 @@ int Function_example(void);
 
 void main (void)
 {
-	// Main function
+	int x;
+	printf("input a inter value: \n");
+	scanf("%d", &x);
+	printf("the input real value was: %d\n",x);
 }
