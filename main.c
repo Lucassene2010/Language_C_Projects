@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 2 from document attached
+	Exercise 3 from document attached
 */
 
 /////////////////////////////////////////////
@@ -35,8 +35,13 @@
 
 void main (void)
 {
-	float x;
-	printf("input a real value: \n");
-	scanf("%f", &x);
-	printf("the input real value was: %.2f\n",x);
+	int x[3];
+	printf("input three inter values\n");
+	printf("value 1: \n");
+	scanf("%d", x);
+	printf("value 2: \n");
+	scanf("%d", x+1);
+	printf("value 3: \n");
+	scanf("%d", x+2);
+	printf("the sum of the input inter values is: %d\n",(*x)+(*(x+1))+(*(x+2)));
 }
