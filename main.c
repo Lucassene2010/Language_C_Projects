@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 4 from document attached
+	Exercise 5 from document attached
 */
 
 /////////////////////////////////////////////
@@ -10,7 +10,6 @@
 /////////////////////////////////////////////
 
 #include <stdio.h>
-#include <math.h>
 
 /////////////////////////////////////////////
 /// Global variables
@@ -39,6 +38,5 @@ void main (void)
 	float x;
 	printf("input a real value: \n");
 	scanf("%f", &x);
-	x = pow(x,2);
-	printf("the squared input real value is: %.2f\n",x);
+	printf("the fifth part of the input real value is: %.2f\n",x/5);
 }
