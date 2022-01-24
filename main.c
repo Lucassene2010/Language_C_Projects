@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 8 from document attached
+	Exercise 9 from document attached
 */
 
 /////////////////////////////////////////////
@@ -36,7 +36,7 @@
 void main (void)
 {
 	float x;
-	printf("input a Kelvin temperature: \n");
+	printf("input a Celsius temperature: \n");
 	scanf("%f", &x);
-	printf("Change the Kelvin for Celsius temperature: %.2f\n",x - 273.15);
+	printf("Change the Celsius for Kelvin temperature: %.2f\n",x + 273.15);
 }
