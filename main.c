@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 3 from document attached
+	Exercise 4 from document attached
 */
 
 /////////////////////////////////////////////
@@ -10,6 +10,7 @@
 /////////////////////////////////////////////
 
 #include <stdio.h>
+#include <math.h>
 
 /////////////////////////////////////////////
 /// Global variables
@@ -35,13 +36,9 @@
 
 void main (void)
 {
-	int x[3];
-	printf("input three inter values\n");
-	printf("value 1: \n");
-	scanf("%d", x);
-	printf("value 2: \n");
-	scanf("%d", x+1);
-	printf("value 3: \n");
-	scanf("%d", x+2);
-	printf("the sum of the input inter values is: %d\n",(*x)+(*(x+1))+(*(x+2)));
+	float x;
+	printf("input a real value: \n");
+	scanf("%f", &x);
+	x = pow(x,2);
+	printf("the squared input real value is: %.2f\n",x);
 }
