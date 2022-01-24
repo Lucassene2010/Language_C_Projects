@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 5 from document attached
+	Exercise 6 from document attached
 */
 
 /////////////////////////////////////////////
@@ -36,7 +36,7 @@
 void main (void)
 {
 	float x;
-	printf("input a real value: \n");
+	printf("input a Celsius temperature: \n");
 	scanf("%f", &x);
-	printf("the fifth part of the input real value is: %.2f\n",x/5);
+	printf("Change the Celsius for Fahrenheit temperature: %.2f\n",x*(9.0/5.0)+32);
 }
