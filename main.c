@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 1 from document attached
+	Exercise 2 from document attached
 */
 
 /////////////////////////////////////////////
@@ -35,8 +35,8 @@
 
 void main (void)
 {
-	int x;
-	printf("input a inter value: \n");
-	scanf("%d", &x);
-	printf("the input real value was: %d\n",x);
+	float x;
+	printf("input a real value: \n");
+	scanf("%f", &x);
+	printf("the input real value was: %.2f\n",x);
 }
