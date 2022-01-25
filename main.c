@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 28 from document attached
+	Exercise 40 from document attached
 */
 
 /////////////////////////////////////////////
@@ -10,7 +10,10 @@
 /////////////////////////////////////////////
 
 #include <stdio.h>
-#include <math.h>
+#include <stdint.h>
+#define MIN_COUST 12000.00
+#define MAX_COUST 25000.00
+#define Multiplier_porcent(X) X > 0 ? ( X /100 ) : 0
 
 /////////////////////////////////////////////
 /// Global variables
@@ -22,22 +25,13 @@
 /// Structs and Enums
 /////////////////////////////////////////////
 
-	typedef enum AverageType 
-	{
-		GeometricAverage = 0,
-		WeightedAverage,
-		HarmonicAverage,
-		ArithmeticAverage
-	}AverageType;
+	//None
 
 /////////////////////////////////////////////
 /// Functions
 /////////////////////////////////////////////
 
-float geometricAverage(float *number1, float *number2, float *number3);
-float weightedAverage(float *number1, float *number2, float *number3);
-float harmonicAverage(float *number1, float *number2, float *number3);
-float arithmeticAverage(float *number1, float *number2, float *number3);
+	//None
 
 /////////////////////////////////////////////
 /// Init Code
@@ -45,67 +39,29 @@ float arithmeticAverage(float *number1, float *number2, float *number3);
 
 void main (void)
 {
-	float number1, number2, number3;
-	AverageType Choose;
+	uint8_t distributor_porcent, tax_porcent;
+	float factory_coust,total_coust;
 
-	printf("\n\nGeometric Average = %d\nWeightedAverage = %d\nHarmonic Average = %d\nArithmetic Average = %d",
-		GeometricAverage, WeightedAverage, HarmonicAverage, ArithmeticAverage);
-	printf("\n\nChoose the Average: ");
-	scanf("%d", &Choose);
-	printf("\ninput three numbers\nnumber1: ");
-	scanf("%f", &number1);
-	printf("number2: ");
-	scanf("%f", &number2);
-	printf("number3: ");
-	scanf("%f", &number3);
-	
-	switch((int)Choose)
+	printf("\ninput the factory value of the car: ");
+	scanf("%f", &factory_coust);
+
+	if(factory_coust <= MIN_COUST)
 	{
-		case GeometricAverage:
-		{
-			printf( "\nThe Value of result is: %.2f",geometricAverage(&number1, &number2, &number3) );
-			break;
-		}
-		case WeightedAverage:
-		{
-			printf( "\nThe Value of result is: %.2f",weightedAverage(&number1, &number2, &number3) );
-			break;
-		}
-		case HarmonicAverage:
-		{
-			printf( "\nThe Value of result is: %.2f",harmonicAverage(&number1, &number2, &number3) );
-			break;
-		}
-		case ArithmeticAverage:
-		{
-			printf( "\nThe Value of result is: %.2f",arithmeticAverage(&number1, &number2, &number3) );
-			break;
-		}
-		default:
-		{
-			printf("\nThe choosing value is wrong");
-			break;
-		}
-
+		distributor_porcent = 5;
+		tax_porcent = 0;
 	}
-}
+	else if(factory_coust > MAX_COUST)
+	{
+		distributor_porcent = 15;
+		tax_porcent = 20;
+	}
+	else
+	{
+		distributor_porcent = 10;
+		tax_porcent = 15;
+	}
 
-float geometricAverage(float *number1, float *number2, float *number3)
-{
-	return pow( ( (*number1) * (*number2) * (*number3) ) , (1.0/3.0) );
-}
+	total_coust = factory_coust + factory_coust*(Multiplier_porcent((float)distributor_porcent)) + factory_coust*(Multiplier_porcent((float)tax_porcent));
+	printf("\nCoust total: %.2f", total_coust);
 
-float weightedAverage(float *number1, float *number2, float *number3)
-{
-	return ( (*number1) + (*number2)*2 + (*number3)*3 )/6;
-}
-
-float harmonicAverage(float *number1, float *number2, float *number3)
-{
-	return 1 / ( pow(*number1,-1) + pow(*number2,-1) + pow(*number3,-1) );
-}
-
-float arithmeticAverage(float *number1, float *number2, float *number3)
-{
-	return ( *number1 + *number2 + *number3 )/3;
 }
