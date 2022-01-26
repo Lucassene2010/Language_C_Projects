@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 2 from document attached
+	Exercise 3 from document attached
 */
 
 /////////////////////////////////////////////
@@ -40,5 +40,5 @@ void main (void)
 	printf("\n\nInput the value: ");
 	scanf("%f", &value);
 	if(value >= 0) printf("the square root of the value is: %.2f",sqrt(value));
-	else printf("The value is invalid");
+	else printf("The squared value is: %.2f", pow(value,2));
 }
