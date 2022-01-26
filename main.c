@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 3 from document attached
+	Exercise 10 from document attached
 */
 
 /////////////////////////////////////////////
@@ -10,7 +10,9 @@
 /////////////////////////////////////////////
 
 #include <stdio.h>
-#include <math.h>
+#include <windows.h>
+#define MAN_CALC_IDEAL_WEIGHT(X) ( ( 72.7*X ) - 58)
+#define WOMAN_CALC_IDEAL_WEIGHT(X) ( ( 62.1*X ) - 44.7)
 
 /////////////////////////////////////////////
 /// Global variables
@@ -22,7 +24,11 @@
 /// Structs and Enums
 /////////////////////////////////////////////
 
-	//None
+	typedef enum
+	{
+		woman=0,
+		man
+	}gender_id;
 
 /////////////////////////////////////////////
 /// Functions
@@ -36,9 +42,31 @@
 
 void main (void)
 {
-	float value;
-	printf("\n\nInput the value: ");
-	scanf("%f", &value);
-	if(value >= 0) printf("the square root of the value is: %.2f",sqrt(value));
-	else printf("The squared value is: %.2f", pow(value,2));
+	system("cls");
+	float height;
+	gender_id ID;
+
+	printf("\n\nWoman = 0\nMan = 1\nInput the gender: ");
+	scanf("%d", &ID);
+	printf("input the value of height: ");
+	scanf("%f", &height);
+	switch(ID)
+	{
+		case woman:
+		{
+			printf("The ideal weight is: %.2f",WOMAN_CALC_IDEAL_WEIGHT(height));
+			break;
+		}
+		case man:
+		{
+			printf("The ideal weight is: %.2f",MAN_CALC_IDEAL_WEIGHT(height));
+			break;
+		}
+		default:
+		{
+			//do nothing
+			break;
+		}
+	}
+	
 }
