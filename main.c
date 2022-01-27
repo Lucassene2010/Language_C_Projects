@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 1 from document attached
+	Exercise 2 from document attached
 */
 
 /////////////////////////////////////////////
@@ -18,7 +18,8 @@
 
 #include <stdio.h>
 #include <stdint.h>
-#define Number_of_Multiples 5
+#define Number_To_Count 100
+#define First_Number_To_Count 1
 
 /////////////////////////////////////////////
 /// Global variables
@@ -46,6 +47,19 @@ void main (void)
 {
 	uint8_t i;
 	system(CLEAR);
-	printf("\nThe multiples of three: ");
-	for( i = (uint8_t) 1 ; i<=Number_of_Multiples ; i++ ) printf("%d, ",i*3);
+	printf("\n\nCounting one to one hundred, one by one via comand repeat for: ");
+	for( i = (uint8_t) First_Number_To_Count ; i<=Number_To_Count ; i++ ) printf("%d, ",i);
+	printf("\n\nCounting one to one hundred, one by one via comand repeat while: ");
+	while(i >= First_Number_To_Count)
+	{
+		i--;
+		printf("%d, ",Number_To_Count - i);
+	}
+	printf("\n\nCounting one to one hundred, one by one via comand repeat do-while: ");
+	do
+	{
+		i++;
+		printf("%d, ",i);
+
+	}while(i < Number_To_Count);
 }
