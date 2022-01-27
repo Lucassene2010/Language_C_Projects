@@ -2,43 +2,41 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
+	Exercise 1 from document attached
 */
 
 /////////////////////////////////////////////
 /// Compilation directives
 /////////////////////////////////////////////
 
-#include <example_lib.h>
-#define example_define "example_define"
+#ifdef _WIN32
+	#include <windows.h>
+	#define CLEAR "cls"
+#else
+	#define CLEAR "clear"
+#endif
+
+#include <stdio.h>
+#include <stdint.h>
+#define Number_of_Multiples 5
 
 /////////////////////////////////////////////
 /// Global variables
 /////////////////////////////////////////////
 
-int example_global_variable;
+//None
 
 /////////////////////////////////////////////
 /// Structs and Enums
 /////////////////////////////////////////////
 
-typedef struct
-{
-	int example_int_struct;
-	char example_char_struct;
-}example_struct;
-
-
-typedef enum
-{
-	example_enum1,
-	example_enum2
-}example_enum;
+//None
 
 /////////////////////////////////////////////
 /// Functions
 /////////////////////////////////////////////
 
-int Function_example(void);
+//None
 
 /////////////////////////////////////////////
 /// Init Code
@@ -46,5 +44,8 @@ int Function_example(void);
 
 void main (void)
 {
-	// Main function
+	uint8_t i;
+	system(CLEAR);
+	printf("\nThe multiples of three: ");
+	for( i = (uint8_t) 1 ; i<=Number_of_Multiples ; i++ ) printf("%d, ",i*3);
 }
