@@ -2,7 +2,7 @@
 	Author: Lucas Henrique
 	Email: lucassene2010@gmail.com
 	GitHub: https://github.com/Lucassene2010
-	Exercise 31 from document attached
+	Exercise 24 from document attached
 */
 
 /////////////////////////////////////////////
@@ -18,10 +18,6 @@
 
 #include <stdio.h>
 #include <stdint.h>
-#define RangeToFirstCount (uint8_t) 1
-#define BootNumber (uint8_t) 1
-#define RangeToSecondCount (uint8_t) 2
-#define MaxCount (uint8_t) 50
 
 /////////////////////////////////////////////
 /// Global variables
@@ -48,11 +44,13 @@
 void main (void)
 {
 	system(CLEAR);
-	uint8_t i, j;
+	int i,j;
 	float sum;
-	for(i = BootNumber , j = BootNumber; i <= MaxCount; i += RangeToFirstCount, j += RangeToSecondCount)
+	printf("\nInput a valut for received the sequence: ");
+	scanf("%d", &i);
+	printf("The sequence is: ");
+	for(j=1;j<i;j++)
 	{
-		sum += ( (float) j / (float) i );
+		if(!(i%j)) printf("%d, ", j); 
 	}
-	printf("sum: %.2f ", sum);
 }
